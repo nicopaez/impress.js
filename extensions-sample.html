@@ -24,26 +24,43 @@
 </head> 
 <body>
 
+  <!--
+    Every presentation is a secuence of steps. The layout of each step can be:
+    1- slide: equivalent to PowerPoint, the content is places in a well defined box and in many cases contain a title and bullets
+    2- freeform: the content is placed without any delimiting form, and it is more appropiated for displaying "unstructure" information
+
+    Each step should be defined witn a unique id and positioning data: data-x and data-y
+  -->
     
-<div id="impress" class="impress-not-supported">
+  <div id="impress" class="impress-not-supported">
 
-
-<!--
-    <div id="step1" class="step slide" data-x="0" data-y="0">
-        <h1>Slide title</h1>
-        <p>This one just contains text </p>      
+    <!-- The first step is generally the introduction and contains title and author,
+        so we don't need a slide layout, we can use a freeform layout
+          -->
+    <div id="step1" class="step" data-x="0" data-y="0" data-scale="3">
+        <span class="title"><h1>Sample Presentation</h1></span>
+        <span class="author">by nicopaez@computer.org</span>
     </div>
--->
 
-    <div id="step2" class="step slide" data-x="0" data-y="0">
-        <h1>Slide with bullets</h1><br/>
-        <span class="bullets">
-        # Bullet 1 <br/>
-        # Bullet 1 <br/>
-        # Bullet 1 <br/>
+    <!-- Slide with bullets -->
+    <div id="step2" class="step slide" data-x="-2000" data-y="-1500">
+        <h1>Step 2: Slide with bullets</h1>
+       <span class="bullets">   
+          <p># Bullet 1</p>
+          <p># Bullet 2</p>
+          <p># Bullet 3</p>
         </span>
+    </div>
 
+    <!-- Slide with text -->
+    <div id="step3" class="step slide" data-x="-800" data-y="-1500">
+        <h1>Step 3: slide w/ title and text</h1>
+        <p>This one just contains a title and a text. This very traditional.</p>      
+    </div>
 
+    <!-- Overview of the whole presentation -->
+    <!-- Typically used for closing-->
+    <div id="final" class="step" data-x="0" data-y="0" data-scale="10">
     </div>
 
 </div>
